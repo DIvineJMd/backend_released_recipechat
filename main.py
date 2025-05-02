@@ -12,7 +12,7 @@ allowed_origins = [
     "https://recipechat.netlify.app",  # Deployed frontend
 ]
 CORS(app, supports_credentials=True, origins=allowed_origins)
-
+app.config['DEBUG'] = os.environ.get('FLASK_DEBUG')
 # Update SocketIO configuration
 socketio = SocketIO(
     app, 
